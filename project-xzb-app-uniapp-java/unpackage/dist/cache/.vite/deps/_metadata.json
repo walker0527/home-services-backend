@@ -1,0 +1,15 @@
+{
+  "hash": "1d996391",
+  "configHash": "c07bee23",
+  "lockfileHash": "90ecd1a6",
+  "browserHash": "b914bc9b",
+  "optimized": {
+    "date-fns": {
+      "src": "../../../../../node_modules/date-fns/esm/index.js",
+      "file": "date-fns.js",
+      "fileHash": "7bf2d774",
+      "needsInterop": false
+    }
+  },
+  "chunks": {}
+}
