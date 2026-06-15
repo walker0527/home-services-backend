@@ -25,13 +25,11 @@
             <groupId>com.jzo2o</groupId>
             <artifactId>jzo2o-common</artifactId>
         </dependency>
-
         <!--httpClient的依赖 -->
         <dependency>
             <groupId>io.github.openfeign</groupId>
             <artifactId>feign-httpclient</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
@@ -44,7 +42,5 @@
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
         </dependency>
-
     </dependencies>
-
 </project>

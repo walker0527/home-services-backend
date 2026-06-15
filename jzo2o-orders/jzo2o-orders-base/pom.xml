@@ -83,5 +83,4 @@
             <artifactId>jzo2o-mvc</artifactId>
         </dependency>
     </dependencies>
-
 </project>

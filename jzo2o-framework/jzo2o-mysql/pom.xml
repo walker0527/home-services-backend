@@ -6,7 +6,7 @@
         <artifactId>jzo2o-parent</artifactId>
         <groupId>com.jzo2o</groupId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../jzo2o-parent</relativePath>
+<!--        <relativePath>../jzo2o-parent</relativePath>-->
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -23,12 +23,10 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
 
         </dependency>
-
         <dependency>
             <groupId>com.jzo2o</groupId>
             <artifactId>jzo2o-common</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -37,12 +35,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
         </dependency>
-
         <dependency>
             <groupId>com.mysql</groupId>
             <!--<artifactId>mysql-connector-java</artifactId>-->
@@ -52,7 +48,5 @@
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
         </dependency>
-
     </dependencies>
-
 </project>
