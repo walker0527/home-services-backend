@@ -20,6 +20,12 @@
         <module>../jzo2o-canal-sync</module>
         <module>../jzo2o-seata</module>
         <module>../jzo2o-sentinel</module>
+        <module>../../jzo2o-customer</module>
+        <module>../../jzo2o-foundations</module>
+        <module>../../jzo2o-publics</module>
+        <module>../../jzo2o-market</module>
+        <module>../../jzo2o-orders</module>
+        <module>../../jzo2o-trade</module>
     </modules>
 
     <groupId>com.jzo2o</groupId>
