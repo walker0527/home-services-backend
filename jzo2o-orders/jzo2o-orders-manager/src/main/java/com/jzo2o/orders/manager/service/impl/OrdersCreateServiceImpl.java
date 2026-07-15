@@ -117,7 +117,6 @@ public class OrdersCreateServiceImpl extends ServiceImpl<OrdersMapper, Orders> i
     @Resource
     private RedisTemplate<String, Long> redisTemplate;
 
-
     @Resource
     private ServeProviderApi serveProviderApi;
     @Resource

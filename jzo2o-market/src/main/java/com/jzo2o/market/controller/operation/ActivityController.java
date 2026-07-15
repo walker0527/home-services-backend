@@ -45,8 +45,6 @@ public class ActivityController {
     @ApiImplicitParam(name = "id", value = "活动id", required = true, dataTypeClass = Long.class)
     public void revoke(@PathVariable("id") Long id) {
         activityService.revoke(id);
-
     }
-
 
 }
