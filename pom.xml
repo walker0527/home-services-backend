@@ -4,35 +4,37 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
 
-
-    <modules>
-        <module>../jzo2o-common</module>
-        <module>../jzo2o-mysql</module>
-        <module>../jzo2o-knife4j-web</module>
-        <module>../jzo2o-xxl-job</module>
-        <module>../jzo2o-mvc</module>
-        <module>../jzo2o-redis</module>
-        <module>../jzo2o-thirdparty</module>
-        <module>../jzo2o-es</module>
-        <module>../jzo2o-rabbitmq</module>
-        <module>../jzo2o-statemachine</module>
-        <module>../jzo2o-shardingsphere-jdbc</module>
-        <module>../jzo2o-canal-sync</module>
-        <module>../jzo2o-seata</module>
-        <module>../jzo2o-sentinel</module>
-        <module>../../jzo2o-customer</module>
-        <module>../../jzo2o-foundations</module>
-        <module>../../jzo2o-publics</module>
-        <module>../../jzo2o-market</module>
-        <module>../../jzo2o-orders</module>
-        <module>../../jzo2o-trade</module>
-    </modules>
-
     <groupId>com.jzo2o</groupId>
     <artifactId>jzo2o-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>jzo2o-parent</name>
     <description>家政o2o父项目，用于管理依赖版本</description>
+
+    <modules>
+        <module>jzo2o-framework/jzo2o-common</module>
+        <module>jzo2o-framework/jzo2o-mysql</module>
+        <module>jzo2o-framework/jzo2o-knife4j-web</module>
+        <module>jzo2o-framework/jzo2o-xxl-job</module>
+        <module>jzo2o-framework/jzo2o-mvc</module>
+        <module>jzo2o-framework/jzo2o-redis</module>
+        <module>jzo2o-framework/jzo2o-thirdparty</module>
+        <module>jzo2o-framework/jzo2o-es</module>
+        <module>jzo2o-framework/jzo2o-rabbitmq</module>
+        <module>jzo2o-framework/jzo2o-statemachine</module>
+        <module>jzo2o-framework/jzo2o-shardingsphere-jdbc</module>
+        <module>jzo2o-framework/jzo2o-canal-sync</module>
+        <module>jzo2o-framework/jzo2o-seata</module>
+        <module>jzo2o-framework/jzo2o-sentinel</module>
+        <module>jzo2o-customer</module>
+        <module>jzo2o-foundations</module>
+        <module>jzo2o-publics</module>
+        <module>jzo2o-market</module>
+        <module>jzo2o-orders</module>
+        <module>jzo2o-trade</module>
+        <module>jzo2o-api</module>
+        <module>jzo2o-gateway</module>
+    </modules>
+
     <properties>
         <!-- 文件拷贝时的编码 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -92,7 +94,6 @@
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
-
     </dependencies>
 
     <dependencyManagement>
@@ -103,13 +104,11 @@
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
                 <version>2021.0.4.0</version>
             </dependency>
-
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
                 <version>2021.0.4.0</version>
             </dependency>
-
             <!--mybatis-plus 相关依赖-->
             <dependency>
                 <groupId>com.baomidou</groupId>
@@ -126,7 +125,6 @@
                 <artifactId>mybatis-plus-extension</artifactId>
                 <version>${mybatis-plus.version}</version>
             </dependency>
-
             <!--spring-boot相关依赖-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -201,7 +199,6 @@
                 <artifactId>hibernate-validator</artifactId>
                 <version>${validator.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
@@ -212,15 +209,12 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
-
             <!--hutool工具-->
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
-
-
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
@@ -262,7 +256,6 @@
                 <artifactId>snakeyaml</artifactId>
                 <version>${snakeyaml.version}</version>
             </dependency>
-
             <!-- 状态机相关依赖  -->
             <dependency>
                 <groupId>org.springframework.statemachine</groupId>
@@ -274,14 +267,7 @@
                 <artifactId>spring-statemachine-core</artifactId>
                 <version>${statemachine-core.version}</version>
             </dependency>
-
             <!-- alibaba sentinel-->
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-                <version>${spring-cloud-alibaba.version}</version>
-            </dependency>
-
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
@@ -297,7 +283,6 @@
                 <artifactId>sentinel-datasource-nacos</artifactId>
                 <version>${sentinel.version}</version>
             </dependency>
-
             <!--xxl调度任务工具包-->
             <dependency>
                 <groupId>com.xuxueli</groupId>
@@ -374,11 +359,11 @@
                 <artifactId>jzo2o-orders-base</artifactId>
                 <version>${jzo2o.version}</version>
             </dependency>
-            <dependency>
+   <!--         <dependency>
                 <groupId>com.jzo2o</groupId>
                 <artifactId>jzo2o-knife4j-gateway</artifactId>
                 <version>${jzo2o.version}</version>
-            </dependency>
+            </dependency>-->
             <dependency>
                 <groupId>com.jzo2o</groupId>
                 <artifactId>jzo2o-seata</artifactId>
@@ -394,7 +379,6 @@
                 <groupId>io.seata</groupId>
                 <version>${seata-version}</version>
             </dependency>
-
             <dependency>
                 <groupId>org.antlr</groupId>
                 <artifactId>antlr</artifactId>
@@ -410,9 +394,7 @@
                 <artifactId>jzo2o-sentinel</artifactId>
                 <version>${jzo2o.version}</version>
             </dependency>
-
         </dependencies>
-
     </dependencyManagement>
 
     <build>
@@ -438,7 +420,4 @@
             </plugins>
         </pluginManagement>
     </build>
-
-
-
 </project>
