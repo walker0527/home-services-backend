@@ -164,6 +164,7 @@ public class OrdersCreateServiceImpl extends ServiceImpl<OrdersMapper, Orders> i
         BigDecimal totalAmount = serveResDTO.getPrice().multiply(new BigDecimal(purNum));
         // 3.获取可用优惠券,并返回优惠券列表
         return couponApi.getAvailable(totalAmount);
+        //return null;
     }
 
     @Override
@@ -180,7 +181,6 @@ public class OrdersCreateServiceImpl extends ServiceImpl<OrdersMapper, Orders> i
         if (serveResDTO == null || serveResDTO.getSaleStatus() != 2) {
             throw new BadRequestException("服务不可用");
         }
-
 
         // 2.下单前数据准备
         Orders orders = new Orders();
@@ -244,16 +244,17 @@ public class OrdersCreateServiceImpl extends ServiceImpl<OrdersMapper, Orders> i
             owner.add(orders);
         }
         //TODO 暂时不需要支付
-        if (Boolean.FALSE.equals(openPay)) {
-            TradeStatusMsg msg = TradeStatusMsg.builder()
-                    .productOrderNo(orders.getId())
-                    .tradingChannel("WECHAT_PAY")
-                    .statusCode(TradingStateEnum.YJS.getCode())
-                    .tradingOrderNo(IdUtil.getSnowflakeNextId())
-                    .transactionId(IdUtils.getSnowflakeNextIdStr())
-                    .build();
-            paySuccess(msg);
-        }
+//        if (Boolean.FALSE.equals(openPay)) {
+//            TradeStatusMsg msg = TradeStatusMsg.builder()
+//                    .productOrderNo(orders.getId())
+//                    .tradingChannel("WECHAT_PAY")
+//                    .statusCode(TradingStateEnum.YJS.getCode())
+//                    .tradingOrderNo(IdUtil.getSnowflakeNextId())
+//                    .transactionId(IdUtils.getSnowflakeNextIdStr())
+//                    .build();
+//            paySuccess(msg);
+//        }
+        log.info(orders.toString());
         return new PlaceOrderResDTO(orders.getId());
     }
 
@@ -463,7 +464,8 @@ public class OrdersCreateServiceImpl extends ServiceImpl<OrdersMapper, Orders> i
         couponUseReqDTO.setId(couponId);
         couponUseReqDTO.setTotalAmount(orders.getTotalAmount());
         //优惠券核销
-        CouponUseResDTO couponUseResDTO = couponApi.use(couponUseReqDTO);
+        //CouponUseResDTO couponUseResDTO = couponApi.use(couponUseReqDTO);
+        CouponUseResDTO couponUseResDTO = null;
         // 设置优惠金额
         orders.setDiscountAmount(couponUseResDTO.getDiscountAmount());
         // 计算实付金额
