@@ -24,6 +24,4 @@ public class ActivityController {
     @Resource
     private IActivityService activityService;
 
-
-
 }

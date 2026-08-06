@@ -145,8 +145,6 @@ public class OrdersManagerServiceImpl extends ServiceImpl<OrdersMapper, Orders> 
     private CouponApi couponApi;
 
 
-
-
     @Override
     public List<Orders> batchQuery(List<Long> ids) {
         LambdaQueryWrapper<Orders> queryWrapper = Wrappers.<Orders>lambdaQuery().in(Orders::getId, ids).ge(Orders::getUserId, 0);
@@ -165,7 +163,6 @@ public class OrdersManagerServiceImpl extends ServiceImpl<OrdersMapper, Orders> 
     }
 
 
-
     /**
      * 用户端-订单显示状态设置
      *
@@ -174,10 +171,7 @@ public class OrdersManagerServiceImpl extends ServiceImpl<OrdersMapper, Orders> 
      */
     @Override
     public void displaySetting(Long id, Integer displayStatus) {
-        LambdaUpdateWrapper<Orders> updateWrapper = Wrappers.<Orders>lambdaUpdate()
-                .eq(Orders::getId, id)
-                .ge(Orders::getUserId, 0)
-                .set(Orders::getDisplay, displayStatus);
+        LambdaUpdateWrapper<Orders> updateWrapper = Wrappers.<Orders>lambdaUpdate().eq(Orders::getId, id).ge(Orders::getUserId, 0).set(Orders::getDisplay, displayStatus);
         super.update(updateWrapper);
     }
 
@@ -191,14 +185,7 @@ public class OrdersManagerServiceImpl extends ServiceImpl<OrdersMapper, Orders> 
     public Page<Long> operationPageQueryOrdersIdList(OrderPageQueryReqDTO orderPageQueryReqDTO) {
         //1.构造查询条件
         Page<Orders> page = PageUtils.parsePageQuery(orderPageQueryReqDTO, Orders.class);
-        LambdaQueryWrapper<Orders> queryWrapper = Wrappers.<Orders>lambdaQuery()
-                .eq(ObjectUtil.isNotEmpty(orderPageQueryReqDTO.getContactsPhone()), Orders::getContactsPhone, orderPageQueryReqDTO.getContactsPhone())
-                .eq(ObjectUtil.isNotEmpty(orderPageQueryReqDTO.getOrdersStatus()), Orders::getOrdersStatus, orderPageQueryReqDTO.getOrdersStatus())
-                .eq(ObjectUtil.isNotEmpty(orderPageQueryReqDTO.getPayStatus()), Orders::getPayStatus, orderPageQueryReqDTO.getPayStatus())
-                .eq(ObjectUtil.isNotEmpty(orderPageQueryReqDTO.getRefundStatus()), Orders::getRefundStatus, orderPageQueryReqDTO.getRefundStatus())
-                .between(ObjectUtil.isAllNotEmpty(orderPageQueryReqDTO.getMinCreateTime(), orderPageQueryReqDTO.getMaxCreateTime()), Orders::getCreateTime, orderPageQueryReqDTO.getMinCreateTime(), orderPageQueryReqDTO.getMaxCreateTime())
-                .gt(Orders::getUserId, 0)
-                .select(Orders::getId);
+        LambdaQueryWrapper<Orders> queryWrapper = Wrappers.<Orders>lambdaQuery().eq(ObjectUtil.isNotEmpty(orderPageQueryReqDTO.getContactsPhone()), Orders::getContactsPhone, orderPageQueryReqDTO.getContactsPhone()).eq(ObjectUtil.isNotEmpty(orderPageQueryReqDTO.getOrdersStatus()), Orders::getOrdersStatus, orderPageQueryReqDTO.getOrdersStatus()).eq(ObjectUtil.isNotEmpty(orderPageQueryReqDTO.getPayStatus()), Orders::getPayStatus, orderPageQueryReqDTO.getPayStatus()).eq(ObjectUtil.isNotEmpty(orderPageQueryReqDTO.getRefundStatus()), Orders::getRefundStatus, orderPageQueryReqDTO.getRefundStatus()).between(ObjectUtil.isAllNotEmpty(orderPageQueryReqDTO.getMinCreateTime(), orderPageQueryReqDTO.getMaxCreateTime()), Orders::getCreateTime, orderPageQueryReqDTO.getMinCreateTime(), orderPageQueryReqDTO.getMaxCreateTime()).gt(Orders::getUserId, 0).select(Orders::getId);
 
         if (ObjectUtil.isNotEmpty(orderPageQueryReqDTO.getId())) {
             queryWrapper.eq(Orders::getId, orderPageQueryReqDTO.getId());
@@ -234,10 +221,7 @@ public class OrdersManagerServiceImpl extends ServiceImpl<OrdersMapper, Orders> 
         Page<Orders> page = new Page<>();
         page.setSize(orderPageQueryReqDTO.getPageSize());
         page.setOrders(PageUtils.getOrderItems(orderPageQueryReqDTO, Orders.class));
-        LambdaQueryWrapper<Orders> queryWrapper = Wrappers.<Orders>lambdaQuery()
-                .in(Orders::getId, orderPageQueryReqDTO.getOrdersIdList())
-                .eq(ObjectUtils.isNotNull(orderPageQueryReqDTO.getUserId()), Orders::getUserId, orderPageQueryReqDTO.getUserId())
-                .gt(ObjectUtils.isNull(orderPageQueryReqDTO.getUserId()), Orders::getUserId, 0);
+        LambdaQueryWrapper<Orders> queryWrapper = Wrappers.<Orders>lambdaQuery().in(Orders::getId, orderPageQueryReqDTO.getOrdersIdList()).eq(ObjectUtils.isNotNull(orderPageQueryReqDTO.getUserId()), Orders::getUserId, orderPageQueryReqDTO.getUserId()).gt(ObjectUtils.isNull(orderPageQueryReqDTO.getUserId()), Orders::getUserId, 0);
 
         //2.分页查询
         page.setSearchCount(false);
@@ -250,7 +234,6 @@ public class OrdersManagerServiceImpl extends ServiceImpl<OrdersMapper, Orders> 
     }
 
 
-
     /**
      * 查询超过评价时间的订单
      *
@@ -259,15 +242,10 @@ public class OrdersManagerServiceImpl extends ServiceImpl<OrdersMapper, Orders> 
      */
     @Override
     public List<Orders> queryOverTimeEvaluateOrdersList(Integer count) {
-        LambdaQueryWrapper<Orders> queryWrapper = Wrappers.<Orders>lambdaQuery()
-                .eq(Orders::getOrdersStatus, OrderStatusEnum.FINISHED.getStatus())
+        LambdaQueryWrapper<Orders> queryWrapper = Wrappers.<Orders>lambdaQuery().eq(Orders::getOrdersStatus, OrderStatusEnum.FINISHED.getStatus())
                 //TODO 需要测试，暂时改为半小时
 //                .lt(Orders::getUpdateTime, LocalDateTime.now().minusDays(15))
-                .lt(Orders::getUpdateTime, LocalDateTime.now().minusMinutes(30))
-                .gt(Orders::getId, 0)
-                .gt(Orders::getUserId, 0)
-                .orderByAsc(Orders::getUpdateTime)
-                .last("LIMIT " + count);
+                .lt(Orders::getUpdateTime, LocalDateTime.now().minusMinutes(30)).gt(Orders::getId, 0).gt(Orders::getUserId, 0).orderByAsc(Orders::getUpdateTime).last("LIMIT " + count);
 
         List<Orders> ordersList = baseMapper.selectList(queryWrapper);
         if (ObjectUtil.isEmpty(ordersList)) {
@@ -289,7 +267,7 @@ public class OrdersManagerServiceImpl extends ServiceImpl<OrdersMapper, Orders> 
         String jsonResult = orderStateMachine.getCurrentSnapshotCache(String.valueOf(id));
         OrderSnapshotDTO orderSnapshotDTO = JSONUtil.toBean(jsonResult, OrderSnapshotDTO.class);
         //如果未支付则判断是否超时并取消订单
-        if (orderSnapshotDTO.getPayStatus()== OrderPayStatusEnum.NO_PAY.getStatus()){
+        if (orderSnapshotDTO.getPayStatus() == OrderPayStatusEnum.NO_PAY.getStatus()) {
             orderSnapshotDTO = canalIfPayOvertime(orderSnapshotDTO);
         }
         OrderResDTO orderResDTO = BeanUtil.toBean(orderSnapshotDTO, OrderResDTO.class);
@@ -316,14 +294,15 @@ public class OrdersManagerServiceImpl extends ServiceImpl<OrdersMapper, Orders> 
 
     /**
      * 如果支付过期则取消订单
+     *
      * @param orderSnapshotDTO
      */
-    private OrderSnapshotDTO canalIfPayOvertime(OrderSnapshotDTO orderSnapshotDTO){
+    private OrderSnapshotDTO canalIfPayOvertime(OrderSnapshotDTO orderSnapshotDTO) {
         //创建订单未支付15分钟后自动取消
-        if(orderSnapshotDTO.getCreateTime().plusMinutes(15).isBefore(LocalDateTime.now())){
+        if (orderSnapshotDTO.getCreateTime().plusMinutes(15).isBefore(LocalDateTime.now())) {
             //查询支付结果，如果支付最新状态仍是未支付进行取消订单
             int payResultFromTradServer = ordersCreateService.getPayResultFromTradServer(orderSnapshotDTO.getId());
-            if(payResultFromTradServer != 4){
+            if (payResultFromTradServer != 4) {
                 //取消订单
                 OrderCancelDTO orderCancelDTO = BeanUtil.toBean(orderSnapshotDTO, OrderCancelDTO.class);
                 orderCancelDTO.setCurrentUserType(UserType.SYSTEM);
@@ -506,7 +485,6 @@ public class OrdersManagerServiceImpl extends ServiceImpl<OrdersMapper, Orders> 
     }
 
 
-
     /**
      * 用户端-订单删除（隐藏）
      *
@@ -557,11 +535,7 @@ public class OrdersManagerServiceImpl extends ServiceImpl<OrdersMapper, Orders> 
         List<OrderSimpleResDTO> orderSimpleResDTOList = BeanUtil.copyToList(ordersList, OrderSimpleResDTO.class);
 
         //3.封装响应结果
-        return PageResult.<OrderSimpleResDTO>builder()
-                .total(ordersIdPage.getTotal())
-                .pages(ordersIdPage.getPages())
-                .list(orderSimpleResDTOList)
-                .build();
+        return PageResult.<OrderSimpleResDTO>builder().total(ordersIdPage.getTotal()).pages(ordersIdPage.getPages()).list(orderSimpleResDTOList).build();
     }
 
     /**
@@ -575,12 +549,7 @@ public class OrdersManagerServiceImpl extends ServiceImpl<OrdersMapper, Orders> 
     @Override
     public List<OrderSimpleResDTO> consumerQueryList(Long currentUserId, Integer ordersStatus, Long sortBy) {
         //1.构件查询条件
-        LambdaQueryWrapper<Orders> queryWrapper = Wrappers.<Orders>lambdaQuery()
-                .eq(ObjectUtils.isNotNull(ordersStatus), Orders::getOrdersStatus, ordersStatus)
-                .lt(ObjectUtils.isNotNull(sortBy), Orders::getSortBy, sortBy)
-                .eq(Orders::getUserId, currentUserId)
-                .eq(Orders::getDisplay, EnableStatusEnum.ENABLE.getStatus())
-                .select(Orders::getId);
+        LambdaQueryWrapper<Orders> queryWrapper = Wrappers.<Orders>lambdaQuery().eq(ObjectUtils.isNotNull(ordersStatus), Orders::getOrdersStatus, ordersStatus).lt(ObjectUtils.isNotNull(sortBy), Orders::getSortBy, sortBy).eq(Orders::getUserId, currentUserId).eq(Orders::getDisplay, EnableStatusEnum.ENABLE.getStatus()).select(Orders::getId);
         Page<Orders> queryPage = new Page<>();
         queryPage.addOrder(OrderItem.desc(SORT_BY));
         queryPage.setSearchCount(false);
@@ -606,7 +575,6 @@ public class OrdersManagerServiceImpl extends ServiceImpl<OrdersMapper, Orders> 
     }
 
 
-
     /**
      * 订单评价
      *
@@ -618,16 +586,12 @@ public class OrdersManagerServiceImpl extends ServiceImpl<OrdersMapper, Orders> 
         //查询订单详情
         Orders orders = queryById(ordersId);
 
-        if(ObjectUtils.isNull(orders)){
+        if (ObjectUtils.isNull(orders)) {
             throw new CommonException("订单不存在");
         }
 
         //更新订单评价状态
-        LambdaUpdateWrapper<Orders> updateWrapper = Wrappers.<Orders>lambdaUpdate()
-                .eq(Orders::getId, ordersId)
-                .eq(Orders::getOrdersStatus, OrderStatusEnum.FINISHED.getStatus())
-                .eq(Orders::getEvaluationStatus, EvaluationStatusEnum.WAIT_EVALUATE.getStatus())
-                .set(Orders::getEvaluationStatus, EvaluationStatusEnum.COMPLETE_EVALUATION.getStatus());
+        LambdaUpdateWrapper<Orders> updateWrapper = Wrappers.<Orders>lambdaUpdate().eq(Orders::getId, ordersId).eq(Orders::getOrdersStatus, OrderStatusEnum.FINISHED.getStatus()).eq(Orders::getEvaluationStatus, EvaluationStatusEnum.WAIT_EVALUATE.getStatus()).set(Orders::getEvaluationStatus, EvaluationStatusEnum.COMPLETE_EVALUATION.getStatus());
         boolean result = super.update(updateWrapper);
         if (!result) {
             throw new DBException("更新评价状态失败");
@@ -664,7 +628,6 @@ public class OrdersManagerServiceImpl extends ServiceImpl<OrdersMapper, Orders> 
 //
 
 
-
     }
 
     /**
@@ -675,13 +638,7 @@ public class OrdersManagerServiceImpl extends ServiceImpl<OrdersMapper, Orders> 
      */
     @Override
     public List<Orders> queryDispatchOverTimeOrdersList(Integer count) {
-        LambdaQueryWrapper<Orders> queryWrapper = Wrappers.<Orders>lambdaQuery()
-                .eq(Orders::getOrdersStatus, OrderStatusEnum.DISPATCHING.getStatus())
-                .lt(Orders::getServeStartTime, LocalDateTime.now())
-                .gt(Orders::getId, 0)
-                .gt(Orders::getUserId, 0)
-                .orderByAsc(Orders::getUpdateTime)
-                .last("LIMIT " + count);
+        LambdaQueryWrapper<Orders> queryWrapper = Wrappers.<Orders>lambdaQuery().eq(Orders::getOrdersStatus, OrderStatusEnum.DISPATCHING.getStatus()).lt(Orders::getServeStartTime, LocalDateTime.now()).gt(Orders::getId, 0).gt(Orders::getUserId, 0).orderByAsc(Orders::getUpdateTime).last("LIMIT " + count);
         return baseMapper.selectList(queryWrapper);
     }
 }
