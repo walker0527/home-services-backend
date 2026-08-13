@@ -141,8 +141,8 @@ public class OrdersManagerServiceImpl extends ServiceImpl<OrdersMapper, Orders> 
     @Value("${jzo2o.openPay}")
     private Boolean openPay;
 
-    @Resource
-    private CouponApi couponApi;
+//    @Resource
+//    private CouponApi couponApi;
 
 
     @Override
