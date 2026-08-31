@@ -4,8 +4,6 @@
 
 机构端：https://jzo2o-institution.itheima.net/#/dashboard/base
 
-前端工程代码：https://gitee.com/itxinfei/jzo2o-web
-
 ### 一、项目介绍
 
 #### 1、项目背景
