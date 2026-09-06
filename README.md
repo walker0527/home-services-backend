@@ -1,169 +1,257 @@
+
+
+# jzo2o
+
 ![](docs/images/logo.png)
 
-后台管理：https://jzo2o-operation.itheima.net/#/dashboard/base
+jzo2o 是一个家政 O2O 平台，包含用户端、机构端和服务人员端，支持家政服务的在线交易流程。
 
-机构端：https://jzo2o-institution.itheima.net/#/dashboard/base
+## 一、项目介绍
 
-【云岚到家】 https://www.bilibili.com/video/BV1uAvXeLEQR/?share_source=copy_web&vd_source=d9817383eeaf512d1ce8b72900d75658
+### 1、项目背景
+jzo2o 项目旨在打造一个家政 O2O 平台，实现服务人员、机构与用户的高效对接，提供从服务上架到订单结算的完整交易闭环。
 
-### 一、项目介绍
+### 2、运营模式
+平台支持 B2B2C 与 C2B2C 两种运营模式：
+- **B2B2C**：机构提供服务，平台负责撮合与抽成
+- **C2B2C**：用户发布需求，机构或服务人员接单
 
-#### 1、项目背景
-
-2015年国家就提出了"互联网+"的行动计划，什么是"互联网+"?
-
-![](docs/images/互联网.png)
-
-​		“互联网+”简单的说就是“互联网+传统行业”，互联网为传统行业赋能,利用互联网具备的优势特点对传统行业进行优化升级转型，最终推动社会不断地向前发展。互联网+的成功案例有很多，像滴滴出行、美团外卖和共享单车等平台将传统出行、餐饮和交通等行业与互联网连接，提供更便捷、经济高效的服务。
-​		云岚到家项目是一个家政服务o2o平台，互联网+家政是继打车、外卖后的又一个风口，创业者众多，比如：58到家，天鹅到家等，o2o（Online To Offline）是将线下商务的机会与互联网的技术结合在一起，让互联网成为线下交易的前台，同时起到推广和成交的作用。
-​		家政服务o2o市场前景非常好，中国社会的家庭小型化、人口老龄化进程加快，加之二胎政策、三孩政策的推行，创造了大量对于家政服务的潜在需求。艾媒咨询发布《2022-2023年中国家政服务行业发展剖析及行业投资机遇分析报告》显示，从2015年的2776亿元已提升至2021年的10149亿元，进入万亿级市场行列。
-
-中国家政服务业从业人员数量规模逐年稳步增长
-
-![](docs/images/项目背景.png)
-
-#### 2、运营模式
-
-我们调研了家政服务O2O平台的运营模式，如下：
-![](docs/images/运营模式.png)
-**C2B2C:**
-在家政 O2O（Online to Offline，线上到线下）领域中，"Consumer to Business to Consumer"（C2B2C）描述了一个商业模式，消费者不仅可以通过平台获取家政服务，还有机会成为服务提供者。在这个背景下，C2B2C 模式通常指的是：
-
-1. 消费者（Consumer）：
-- 最终的家庭用户，他们需要家政服务，例如清洁、保姆、维修等。
-2. 企业（Business）：
-- 在家政 O2O 中，企业通常是在线平台，提供家政服务的中介。这些平台通过在线渠道为消费者提供了查找、预订、支付等服务，同时也可能为家政服务提供者提供了工作机会。
-3. 消费者（家政服务提供者）：
-- 在 C2B2C 模式中，一些消费者也可以成为服务的提供者。这些个体可能是独立的家政服务专业人员，他们可以在家政 O2O 平台上注册，提供自己的服务，并被其他需要服务的消费者雇佣。
-
-**B2B2C:**
-代表着"Business to Business to Consumer"，即企业到企业到消费者的模式。家政服务平台作为中间商，通过与各种家政服务提供商（家政服务公司）合作，为消费者提供多样化的家政服务选择。
-B2B2C与C2B2C的区别是：B2B2C中服务提供者是家政服务中介公司，在C2B2C中是服务提供者是拥有服务技能的服务人员（散户）。
-本项目结合了C2B2C和B2B2C模式，个人和家政服务中介都可以通过平台提供家政服务，如下图：
-项目包括四个端：用户端(小程序)、服务端（app）、机构端(PC)、运营管理端(PC)，四个端对应四类用户角色：
-家政需求方：通过用户端小程序完成在线预约下单、支付、评价、投诉、退款等操作。
-家政服务人员：通过服务端APP完成在线接单、结算等操作。
-家政服务公司：通过机构端完成在线接单、派单、投诉处理、结算等操作。
-平台方：通过管理端完成服务人员管理、机构管理、订单管理、财务管理等操作，一笔完成的订单，结算时按照分成比例平台进行抽成。
 ![](docs/images/B2B2C与C2B2C的区别.png)
 
-#### 3、项目业务流程
-
-   项目核心业务流程如下：
+### 3、项目业务流程
+项目核心业务流程如下：
 
 ![](docs/images/项目核心业务流程.png)
 
-​     核心流程：
-
 1. 运营端在运营区域上架家政服务
-   比如：在北京上架 日常保洁、空调维修。
 2. 用户端通过定位区域获取当前区域的服务项目，选择家政服务，下单、支付
-3. 家政服务人员及家政服务公司（机构）通过平台抢单
-4. 家政服务人员现场服务，平台跟踪管理整个服务过程。
-5. 服务完成，用户评价、售后服务等。
+3. 家政服务人员及机构通过平台抢单或派单
+4. 服务完成后，订单结算，平台按比例抽成
 
-#### 4、项目演示
+### 4、项目演示
+后台管理：https://jzo2o-operation.itheima.net/#/dashboard/base  
+机构端：https://jzo2o-institution.itheima.net/#/dashboard/base  
 
-|工程名	| 中文名称	|职责|
-| ---- | ---- | ---- |
-|jzo2o-gateway	| 网关	| 请求过虑、负载均衡、路由转发 |
-|jzo2o-framework	| 系统架构基础工程	| 提供系统架构封装的基础代码 |
-|jzo2o-api	|  接口工程	| 提供服务之间远程调用接口的定义 |
-|jzo2o-foundations	| 运营基础服务	| 服务管理、区域管理等运行基础服务 |
-|jzo2o-customer	| 客户管理服务	| 用户管理、服务人员管理、机构人员管理 |
-|jzo2o-orders-manager	| 订单管理服务	| 下单、订单状态管理、订单信息管理 |
-|jzo2o-orders-seize	| 抢单服务	| 为服务人员和机构抢单提供服务 |
-|jzo2o-orders-dispatch	| 派单服务	| 根据派单规则自动为服务人员、机构派送订单 |
-|jzo2o-orders-history	| 历史订单服务	| 订单冷热分离，历史订单查询、订单统计接口。 |
-|jzo2o-trade	| 交易服务	| 小程序支付、退款等，与第三方支付系统对接 |
-|jzo2o-market	| 营销活动服务	| 活动管理 |
-|jzo2o-publics	| 通用服务	| 提供上传、定位等通用服务 |
+## 二、项目架构
 
-演示环境准备：
+### 1、项目业务模块
+| 模块            | 服务名称       | 功能说明                                  |
+|------------------|----------------|-------------------------------------------|
+| jzo2o-api        | 接口服务       | 微服务间远程调用接口                      |
+| jzo2o-customer   | 客户管理       | 用户管理、服务人员管理、机构管理            |
+| jzo2o-foundations| 基础服务       | 服务管理、区域管理                         |
+| jzo2o-orders     | 订单管理       | 订单生命周期管理、抢单、派单、历史订单    |
+| jzo2o-trade      | 交易服务       | 小程序支付、退款                           |
+| jzo2o-market     | 营销活动       | 优惠券、活动管理                           |
+| jzo2o-publics    | 通用服务       | 上传、定位等通用服务                       |
+| jzo2o-framework  | 系统架构基础   | 提供通用架构封装                          |
+| jzo2o-gateway    | 网关           | 请求过滤、负载均衡、路由转发                |
 
-1. 启动jzo2o-gateway
-2. 启动jzo2o-customer
-3. 启动jzo2o-publics
-4. 启动jzo2o-foundations
-5. 启动jzo2o-orders-manager
-6. 启动jzo2o-orders-seize
+### 2、项目架构
+项目基于 Spring Cloud Alibaba 构建，采用前后端分离架构。
+
+![](docs/images/项目架构.png)
+
+主要技术栈：
+- Spring Cloud Alibaba
+- Redis 缓存
+- Elasticsearch 搜索与地理定位
+- ShardingSphere 分库分表
+- Seata 分布式事务
+- Canal + RabbitMQ 异构数据同步
+- XXL-JOB 任务调度
+- 状态机引擎 流程控制
+
+### 3、学习收获
+通过本项目，开发者可以掌握：
+1. 项目需求分析与系统设计
+2. 微服务开发与调优（Spring Cloud Alibaba）
+3. Redis 缓存方案设计
+4. Canal + MQ 数据同步
+5. Elasticsearch 全文检索与地理搜索
+6. ShardingSphere 分库分表
+7. Seata 分布式事务控制
+8. XXL-JOB 调度与线程池管理
+9. 状态机流程设计
+10. 秒杀、派单调度、服务管理等业务系统设计
+11. 统计分析与看板系统开发
+
+## 三、核心功能演示
+
+### 启动顺序
+1. 启动 jzo2o-gateway
+2. 启动 jzo2o-customer
+3. 启动 jzo2o-publics
+4. 启动 jzo2o-foundations
+5. 启动 jzo2o-orders-manager
+6. 启动 jzo2o-orders-seize
 7. 启动管理端（前端）
 8. 启动服务端（前端）
 9. 启动用户端（前端）
-10. 启动canal前需要reset master，删除canal的meta.dat。
+10. 启动 Canal 前需执行 `reset master` 并删除 `meta.dat`
 
-演示核心业务流程。
-1. 服务管理，服务上架
-2. 用户下单、支付（支付可以略过）
-3. 服务人员抢单
-4. 现场服务，开始服务、完成服务
+### 核心业务流程
+1. **服务管理**：运营端上架家政服务（如北京上架日常保洁、空调维修）
+2. **用户下单**：用户通过小程序查询服务，选择后下单并支付
+3. **抢单/派单**：服务人员或机构设置服务范围与技能后，通过抢单或系统派单获取订单
+4. **订单管理**：订单生命周期管理（创建、取消、完成等）
+5. **交易结算**：平台根据订单完成情况抽成
 
-### 二、项目架构
-
-#### 1、项目业务模块
-
-项目业务模块图
-
-![](docs/images/项目业务模块图.png)
-
-我们根据业务流程去分析各个模块的功能：
-
-1. 服务管理：对家政服务项目进行管理，最后在指定区域上架服务后用户可在当前区域购买。
-2. 下单支付：用户通过小程序完成下单支付，进入小程序首页查询服务，用户选择服务，下单并支付
-3. 抢单：服务人员和机构进行抢单。首先服务人员和机构设置接单范围、服务技能、开启抢单开关，然后进入抢单界面进行抢单。
-4. 派单调度：平台根据撮合匹配算法通过任务调度将订单和服务人员进行撮合匹配，促进成交。
-5. 订单管理：对订单的生命周期进行管理，包括创建订单、取消订单、删除订单、历史订单等。
-6. 服务人员管理：对服务人员的信息、认证等进行管理。
-7. 企业管理：对机构的信息、认证进行管理。
-8. 客户管理：对c端用户的信息、用户的状态等信息进行管理。
-9. 营销管理：对优惠券活动进行管理。
-
-
-
-#### 2、项目架构
-
-项目是基于Spring Cloud Alibaba框架构建的微服务项目，采用前后端分离模式进行开发，系统架构图如下：
-![](docs/images/项目架构.png)
-用户层：
-
-1. 包括四个端：运营端(PC)、服务端（APP）、机构端（PC）、用户端（小程序）
-2. 负载层：反向代理、负载均衡。
-3. 服务层：包括网关、业务微服务、基础服务。
-4. 业务微服务：包括运营基础服务、客户管理服务、订单管理服务、抢单服务、派单服务、支付服务等。
-5. 基础服务：Nacos（服务注册、配置中心）、XXL-JOB（任务调度）、RabbitMQ（消息队列）、Elasticsearch（全文检索）、Canal（数据同步）、Sentinel（熔断降级、限流）等。
-6. 数据层：MySQL数据库存储：服务信息、区域信息、客户信息、订单信息、支付信息、抢单池、派单池、结算信息等。
-7. 分库分表：使用ShardingShphere进行分库分表。
-8. TiDB分布式数据库存储：历史订单信息。
-9. 消息队列：存储数据同步消息、各类异步消息等。
-10. 索引：服务信息、服务提供者信息、订单信息等。
-11. 缓存：服务信息、订单信息、服务单信息等。
-
-项目核心交互流程如下图：
 ![](docs/images/项目核心交互流程.jpg)
 
-#### 3、学习收获
+## 四、部署与开发环境
 
-1. 前边大概了解了项目情况，学完项目我们可以收获哪些呢？
-2. 掌握项目需求分析能力
-3. 掌握系统分析与设计的能力
-4. 掌握Spring Cloud 在项目中的开发与调优能力
-5. 掌握Redis在项目中的应用能力
-6. 掌握缓存技术方案的分析与设计能力
-7. 掌握Canal+MQ异构数据同步的开发调试能力
-8. 掌握Elasticsearch全文检索与地理搜索的开发能力
-9. 掌握ShardingSphere分库分表的方案设计与开发能力
-10. 掌握Seata分布式事务控制的开发能力
-11. 掌握数据冷热分离技术方案的设计与开发能力
-12. 掌握XXL-JOB+线程池任务调度方案的设计与开发能力
-13. 掌握系统调优与线上故障处理的能力
-14. 掌握状态机组件的设计与开发能力
-15. 掌握门户业务的设计与开发能力
-16. 掌握订单支付业务的系统设计与开发能力
-17. 掌握优惠券&活动管理业务的系统设计与开发能力
-18. 掌握秒杀抢购业务的常见设计方案与开发能力
-19. 掌握派单调度类业务的系统设计与开发能力
-20. 掌握客户管理业务的系统设计与开发能力
-21. 掌握活动管理业务的系统设计与开发能力
-22. 掌握搜索附近业务的系统设计与开发能力
-23. 掌握服务管理&商品管理业务的系统计与开发能力
-24. 掌握统计分析与看板业务的系统设计与开发能力
+### 技术栈
+- Spring Boot 2.x
+- Spring Cloud Alibaba 2022.x
+- Nacos 服务注册与配置中心
+- Redis 缓存
+- Elasticsearch 全文检索与地理搜索
+- RabbitMQ 消息队列
+- MySQL 分库分表
+- Seata 分布式事务
+- XXL-JOB 任务调度
+- Knife4j 接口文档
+
+### 模块依赖关系
+```
+jzo2o-customer
+├── jzo2o-api
+├── jzo2o-framework
+│   ├── jzo2o-common
+│   ├── jzo2o-mvc
+│   ├── jzo2o-rabbitmq
+│   ├── jzo2o-es
+│   ├── jzo2o-mysql
+│   └── jzo2o-redis
+├── jzo2o-orders
+│   ├── jzo2o-orders-manager
+│   ├── jzo2o-orders-seize
+│   └── jzo2o-orders-dispatch
+└── jzo2o-trade
+```
+
+### 项目结构
+```
+jzo2o/
+├── README.md
+├── docs/
+│   └── images/
+├── jzo2o-api/
+│   └── README.md
+├── jzo2o-customer/
+│   └── README.md
+├── jzo2o-foundations/
+│   └── README.md
+├── jzo2o-gateway/
+│   └── README.md
+├── jzo2o-market/
+│   └── README.md
+├── jzo2o-orders/
+│   ├── jzo2o-orders-dispatch/
+│   ├── jzo2o-orders-history/
+│   └── jzo2o-orders-seize/
+├── jzo2o-publics/
+│   └── README.md
+└── jzo2o-trade/
+    └── README.md
+```
+
+## 五、开发与部署
+
+### 1. 开发环境
+- JDK 11+
+- Maven 3.6+
+- Git
+- IDE（IntelliJ IDEA / Eclipse）
+- Docker（可选）
+
+### 2. 构建项目
+```bash
+# 克隆项目
+git clone https://gitee.com/itxinfei/jzo2o.git
+
+# 进入项目目录
+cd jzo2o
+
+# 构建所有模块
+mvn clean install
+```
+
+### 3. 部署项目
+```bash
+# 启动网关服务
+cd jzo2o-gateway && mvn spring-boot:run
+
+# 启动客户管理服务
+cd ../jzo2o-customer && mvn spring-boot:run
+
+# 启动基础服务（区域、服务项管理）
+cd ../jzo2o-foundations && mvn spring-boot:run
+
+# 启动订单管理服务
+cd ../jzo2o-orders/jzo2o-orders-manager && mvn spring-boot:run
+
+# 启动抢单服务
+cd ../jzo2o-orders-seize && mvn spring-boot:run
+
+# 启动交易服务
+cd ../../jzo2o-trade && mvn spring-boot:run
+
+# 启动营销服务
+cd ../jzo2o-market && mvn spring-boot:run
+
+# 启动公共通用服务
+cd ../jzo2o-publics && mvn spring-boot:run
+```
+
+### 4. 前端部署
+- 管理端：https://jzo2o-operation.itheima.net
+- 机构端：https://jzo2o-institution.itheima.net
+- 用户端：https://jzo2o-user.itheima.net
+
+## 六、贡献指南
+
+### 提交规范
+1. 请确保提交前通过本地测试
+2. 提交前请 pull 最新代码并解决冲突
+3. 遵循 [Conventional Commits](https://www.conventionalcommits.org/) 规范
+4. 提交前请确保代码风格统一（使用 IDEA 默认格式）
+5. 请使用中文注释
+
+### Issue 管理
+- 请在 issue 中清晰描述 bug、需求或文档问题
+- 开发者可认领 issue 进行修复
+- 提交 PR 时请关联对应 issue
+
+## 七、文档与社区
+
+### 接口文档
+项目使用 Knife4j 提供接口文档支持，文档地址：
+- 客户管理服务：http://localhost:8080/doc.html
+- 订单服务：http://localhost:8081/doc.html
+- 基础服务：http://localhost:8082/doc.html
+- 营销服务：http://localhost:8083/doc.html
+- 交易服务：http://localhost:8084/doc.html
+
+### 社区支持
+- Gitee 仓库：https://gitee.com/itxinfei/jzo2o
+- Issue 提交：https://gitee.com/itxinfei/jzo2o/issues
+- Wiki：https://gitee.com/itxinfei/jzo2o/wikis
+- 交流群：请加入 Gitee 社区讨论组
+
+## 八、许可证
+本项目基于 [MIT License](LICENSE)，可自由用于商业用途，但需保留原始版权声明。
+
+## 九、项目维护者
+项目由 [itxinfei](https://gitee.com/itxinfei) 维护，欢迎社区开发者参与贡献。
+
+## 十、联系方式
+- 邮箱：itxinfei@163.com
+- 微信：请查看项目 Wiki
+- Gitee：https://gitee.com/itxinfei/jzo2o
+
+---
+**项目核心交互流程图**
+
+![](docs/images/项目核心交互流程.jpg)
