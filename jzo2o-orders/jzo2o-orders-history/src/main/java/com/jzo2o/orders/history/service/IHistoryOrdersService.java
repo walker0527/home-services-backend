@@ -16,8 +16,7 @@ import java.util.List;
  * 订单表 服务类
  * </p>
  *
- * @author itcast
- * @since 2023-09-11
+ * @author handuolong
  */
 public interface IHistoryOrdersService extends IService<HistoryOrders> {
 

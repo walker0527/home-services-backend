@@ -16,7 +16,7 @@ import java.io.InputStream;
 import java.util.UUID;
 
 /**
- * @author itcast
+ * @author handuolong
  */
 @Slf4j
 @Service

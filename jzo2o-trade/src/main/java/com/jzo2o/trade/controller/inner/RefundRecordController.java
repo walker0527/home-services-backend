@@ -20,7 +20,7 @@ import java.math.BigDecimal;
 /**
  * 基础支付控制器
  *
- * @author itcast
+ * @author handuolong
  */
 @RequestMapping("/inner/refund-record")
 @RestController("innerRefundRecordController")

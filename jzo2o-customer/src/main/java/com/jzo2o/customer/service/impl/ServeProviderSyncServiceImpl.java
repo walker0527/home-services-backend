@@ -12,8 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
  * 评分同步列表 服务实现类
  * </p>
  *
- * @author itcast
- * @since 2023-08-07
+ * @author handuolong
  */
 @Service
 public class ServeProviderSyncServiceImpl extends ServiceImpl<ServeProviderSyncMapper, ServeProviderSync> implements IServeProviderSyncService {

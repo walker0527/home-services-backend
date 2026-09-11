@@ -9,8 +9,7 @@ import lombok.Data;
  * 地址薄分页查询请求
  * </p>
  *
- * @author itcast
- * @since 2023-07-06
+ * @author handuolong
  */
 @Data
 @ApiModel("地址薄分页查询请求")

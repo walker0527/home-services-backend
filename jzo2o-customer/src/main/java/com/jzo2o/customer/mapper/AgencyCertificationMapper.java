@@ -8,8 +8,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * 机构认证信息表 Mapper 接口
  * </p>
  *
- * @author itcast
- * @since 2023-09-06
+ * @author handuolong
  */
 public interface AgencyCertificationMapper extends BaseMapper<AgencyCertification> {
 

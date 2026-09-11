@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author itcast
+ * @author handuolong
  */
 public interface EvaluationService {
 

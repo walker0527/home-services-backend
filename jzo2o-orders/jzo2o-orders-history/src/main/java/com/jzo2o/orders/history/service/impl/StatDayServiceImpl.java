@@ -25,8 +25,7 @@ import java.util.List;
  * 日统计表 服务实现类
  * </p>
  *
- * @author itcast
- * @since 2023-09-21
+ * @author handuolong
  */
 @Service
 public class StatDayServiceImpl extends ServiceImpl<StatDayMapper, StatDay> implements IStatDayService {

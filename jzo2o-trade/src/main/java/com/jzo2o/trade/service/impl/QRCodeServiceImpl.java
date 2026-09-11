@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 
 /**
- * @author itcast
+ * @author handuolong
  */
 @Service
 public class QRCodeServiceImpl implements QRCodeService {

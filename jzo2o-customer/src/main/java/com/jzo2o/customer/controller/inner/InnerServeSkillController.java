@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 内部接口-服务技能相关接口
  *
- * @author itcast
+ * @author handuolong
  * @create 2023/7/25 10:36
  **/
 @RestController

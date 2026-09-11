@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * 服务同步表更新
  *
- * @author itcast
+ * @author handuolong
  * @create 2023/8/1 19:06
  **/
 @Data

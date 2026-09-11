@@ -16,8 +16,7 @@ import java.time.LocalDateTime;
  * 
  * </p>
  *
- * @author itcast
- * @since 2023-09-16
+ * @author handuolong
  */
 @Data
 public class CouponInfoResDTO implements Serializable {

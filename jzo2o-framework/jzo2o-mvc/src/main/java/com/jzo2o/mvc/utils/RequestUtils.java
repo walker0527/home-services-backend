@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * 请求工具
  *
- * @author itcast
+ * @author handuolong
  */
 public class RequestUtils {
 

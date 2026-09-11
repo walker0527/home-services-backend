@@ -12,7 +12,6 @@ import java.util.List;
  * </p>
  *
  * @author author
- * @since 2023-07-03
  */
 public interface OperatorMapper extends BaseMapper<Operator> {
 

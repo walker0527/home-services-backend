@@ -8,8 +8,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * 服务人员认证审核表 Mapper 接口
  * </p>
  *
- * @author itcast
- * @since 2023-09-06
+ * @author handuolong
  */
 public interface WorkerCertificationAuditMapper extends BaseMapper<WorkerCertificationAudit> {
 

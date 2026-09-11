@@ -38,8 +38,7 @@ import static com.jzo2o.market.enums.ActivityStatusEnum.*;
  * 服务实现类
  * </p>
  *
- * @author itcast
- * @since 2023-09-16
+ * @author handuolong
  */
 @Service
 public class ActivityServiceImpl extends ServiceImpl<ActivityMapper, Activity> implements IActivityService {

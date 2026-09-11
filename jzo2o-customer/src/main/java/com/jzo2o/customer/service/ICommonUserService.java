@@ -12,8 +12,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * 服务类
  * </p>
  *
- * @author itcast
- * @since 2023-07-04
+ * @author handuolong
  */
 public interface ICommonUserService extends IService<CommonUser> {
 

@@ -8,8 +8,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * 服务技能表 Mapper 接口
  * </p>
  *
- * @author itcast
- * @since 2023-07-18
+ * @author handuolong
  */
 public interface ServeSkillMapper extends BaseMapper<ServeSkill> {
 

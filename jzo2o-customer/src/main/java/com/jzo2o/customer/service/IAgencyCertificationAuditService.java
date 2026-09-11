@@ -14,8 +14,7 @@ import com.jzo2o.customer.model.dto.response.RejectReasonResDTO;
  * 机构认证审核表 服务类
  * </p>
  *
- * @author itcast
- * @since 2023-09-06
+ * @author handuolong
  */
 public interface IAgencyCertificationAuditService extends IService<AgencyCertificationAudit> {
     /**

@@ -51,7 +51,6 @@ public class ExcelController {
     /**
      * 文件下载并且失败的时候返回json（默认失败了会返回一个有部分数据的Excel）
      *
-     * @since 2.1.1
      */
     @GetMapping("downloadFailedUsingJson")
     public void downloadFailedUsingJson(HttpServletResponse response) throws IOException {

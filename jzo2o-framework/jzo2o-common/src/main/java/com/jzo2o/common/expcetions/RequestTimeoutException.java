@@ -6,7 +6,7 @@ import static java.net.HttpURLConnection.HTTP_CLIENT_TIMEOUT;
 /**
  * 请求超时异常
  *
- * @author itheima
+ * @authorhanduolonng
  */
 public class RequestTimeoutException extends CommonException {
 

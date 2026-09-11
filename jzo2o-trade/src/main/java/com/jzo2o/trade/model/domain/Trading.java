@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 /**
- * @author itcast
+ * @author handuolong
  * @Description：交易订单表
  */
 @Data

@@ -118,7 +118,6 @@ public class WriteTest {
      * <p>
      * 3. 直接写即可
      *
-     * @since 2.1.1
      */
     @Test
     public void excludeOrIncludeWrite() {
@@ -332,7 +331,6 @@ public class WriteTest {
      * <p>
      * 2. 直接写即可
      *
-     * @since 3.0.0-beta1
      */
     @Test
     public void writeCellDataWrite() {
@@ -444,7 +442,6 @@ public class WriteTest {
      * <p>
      * 3. 直接写即可
      *
-     * @since 2.2.0-beta1
      */
     @Test
     public void annotationStyleWrite() {
@@ -496,7 +493,6 @@ public class WriteTest {
             .doWrite(data());
 
         // 方法2: 使用easyexcel的方式完全自己写 不太推荐 尽量使用已有策略
-        // @since 3.0.0-beta2
         fileName = TestFileUtil.getPath() + "handlerStyleWrite" + System.currentTimeMillis() + ".xlsx";
         EasyExcel.write(fileName, DemoData.class)
             .registerWriteHandler(new CellWriteHandler() {
@@ -524,7 +520,6 @@ public class WriteTest {
             .doWrite(data());
 
         // 方法3: 使用poi的样式完全自己写 不推荐
-        // @since 3.0.0-beta2
         // 坑1：style里面有dataformat 用来格式化数据的 所以自己设置可能导致格式化注解不生效
         // 坑2：不要一直去创建style 记得缓存起来 最多创建6W个就挂了
         fileName = TestFileUtil.getPath() + "handlerStyleWrite" + System.currentTimeMillis() + ".xlsx";
@@ -566,7 +561,6 @@ public class WriteTest {
      * <p>
      * 3. 直接写即可
      *
-     * @since 2.2.0-beta1
      */
     @Test
     public void mergeWrite() {

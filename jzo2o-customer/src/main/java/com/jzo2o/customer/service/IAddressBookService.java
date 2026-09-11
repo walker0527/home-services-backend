@@ -14,8 +14,7 @@ import java.util.List;
  * 地址薄 服务类
  * </p>
  *
- * @author itcast
- * @since 2023-07-06
+ * @author handuolong
  */
 public interface IAddressBookService extends IService<AddressBook> {
     /**

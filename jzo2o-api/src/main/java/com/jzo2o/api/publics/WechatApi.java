@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * @author itcast
+ * @author handuolong
  */
 @FeignClient(contextId = "jzo2o-publics", value = "jzo2o-publics", path = "/publics/inner/wechat")
 public interface WechatApi {

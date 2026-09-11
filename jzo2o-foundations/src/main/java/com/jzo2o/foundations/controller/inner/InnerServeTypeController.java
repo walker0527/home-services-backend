@@ -21,8 +21,7 @@ import java.util.List;
  * 内部接口 - 服务类型相关接口
  * </p>
  *
- * @author itcast
- * @since 2023-07-03
+ * @author handuolong
  */
 @RestController
 @RequestMapping("/inner/serve-type")

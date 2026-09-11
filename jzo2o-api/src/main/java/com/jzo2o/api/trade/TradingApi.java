@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * @author itcast
+ * @author handuolong
  */
 @FeignClient(contextId = "jzo2o-trade", value = "jzo2o-trade", path = "/trade/inner/tradings")
 public interface TradingApi {

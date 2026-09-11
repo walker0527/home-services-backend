@@ -18,8 +18,7 @@ import java.util.List;
  * 服务技能表 前端控制器
  * </p>
  *
- * @author itcast
- * @since 2023-07-18
+ * @author handuolong
  */
 @RestController("agencyServeSkillController")
 @RequestMapping("/agency/serve-skill")

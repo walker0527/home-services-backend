@@ -13,8 +13,7 @@ import java.time.LocalDateTime;
  * 区域表
  * </p>
  *
- * @author itcast
- * @since 2023-07-03
+ * @author handuolong
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * 服务类型
  *
- * @author itcast
+ * @author handuolong
  * @create 2023/7/26 14:18
  **/
 @Service

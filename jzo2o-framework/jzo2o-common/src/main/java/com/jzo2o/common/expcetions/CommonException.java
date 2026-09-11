@@ -7,7 +7,7 @@ import lombok.Data;
 import static java.net.HttpURLConnection.HTTP_BAD_REQUEST;
 
 /**
- * @author itcast
+ * @author handuolong
  */
 @Data
 public class CommonException extends RuntimeException {

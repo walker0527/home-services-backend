@@ -20,7 +20,7 @@ import javax.annotation.Resource;
 /**
  * 监听mq消息
  *
- * @author itcast
+ * @author handuolong
  **/
 @Slf4j
 @Component

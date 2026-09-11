@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.math.BigDecimal;
 
 /**
- * @author itcast
+ * @author handuolong
  */
 @FeignClient(contextId = "jzo2o-trade", value = "jzo2o-trade", path = "/trade/inner/refund-record")
 public interface RefundRecordApi {

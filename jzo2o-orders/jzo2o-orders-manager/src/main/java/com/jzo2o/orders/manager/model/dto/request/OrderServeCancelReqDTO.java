@@ -7,7 +7,7 @@ import lombok.Data;
 import javax.validation.constraints.NotNull;
 
 /**
- * @author itcast
+ * @author handuolong
  */
 @Data
 @ApiModel("服务取消模型")

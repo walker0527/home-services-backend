@@ -41,8 +41,7 @@ import static com.jzo2o.orders.base.enums.ServeStatusEnum.SERVE_FINISHED;
  * 服务任务 服务实现类
  * </p>
  *
- * @author itcast
- * @since 2023-09-14
+ * @author handuolong
  */
 @Service
 public class HistoryOrdersServeSyncServiceImpl extends ServiceImpl<HistoryOrdersServeSyncMapper, HistoryOrdersServeSync> implements IHistoryOrdersServeSyncService {

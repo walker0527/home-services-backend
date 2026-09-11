@@ -11,8 +11,7 @@ import org.springframework.stereotype.Service;
  * 优惠券核销表 服务实现类
  * </p>
  *
- * @author itcast
- * @since 2023-09-22
+ * @author handuolong
  */
 @Service
 public class CouponWriteOffServiceImpl extends ServiceImpl<CouponWriteOffMapper, CouponWriteOff> implements ICouponWriteOffService {

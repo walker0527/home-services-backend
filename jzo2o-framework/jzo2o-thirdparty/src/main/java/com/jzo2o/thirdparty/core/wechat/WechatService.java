@@ -2,7 +2,7 @@ package com.jzo2o.thirdparty.core.wechat;
 
 
 /**
- * @author itcast
+ * @author handuolong
  */
 public interface WechatService {
     /**

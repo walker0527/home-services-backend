@@ -1,7 +1,7 @@
 package com.jzo2o.canal.constants;
 
 /**
- * @author itcast
+ * @author handuolong
  */
 public class OperateType {
     /**

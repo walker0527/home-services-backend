@@ -9,8 +9,7 @@ import org.apache.ibatis.annotations.Mapper;
  * 服务同步表 Mapper 接口
  * </p>
  *
- * @author itcast
- * @since 2023-07-10
+ * @author handuolong
  */
 public interface ServeSyncMapper extends BaseMapper<ServeSync> {
 }

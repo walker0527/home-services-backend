@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * @author itcast
+ * @author handuolong
  */
 @ApiModel("下单响应信息")
 @Data

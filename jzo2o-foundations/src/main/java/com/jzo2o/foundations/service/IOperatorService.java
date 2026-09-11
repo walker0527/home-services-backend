@@ -10,7 +10,6 @@ import com.jzo2o.foundations.model.dto.OperatorAddDTO;
  * </p>
  *
  * @author author
- * @since 2023-06-29
  */
 public interface IOperatorService extends IService<Operator> {
 

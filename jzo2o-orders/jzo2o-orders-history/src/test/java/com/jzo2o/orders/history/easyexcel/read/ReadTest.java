@@ -243,7 +243,6 @@ public class ReadTest {
      * <p>
      * 3. 直接读即可
      *
-     * @since 2.2.0-beat1
      */
     @Test
     public void extraRead() {
@@ -268,7 +267,6 @@ public class ReadTest {
      * <p>
      * 3. 直接读即可
      *
-     * @since 2.2.0-beat1
      */
     @Test
     public void cellDataRead() {

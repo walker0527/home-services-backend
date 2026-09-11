@@ -14,8 +14,7 @@ import lombok.experimental.Accessors;
  * 服务技能表
  * </p>
  *
- * @author itcast
- * @since 2023-07-18
+ * @author handuolong
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

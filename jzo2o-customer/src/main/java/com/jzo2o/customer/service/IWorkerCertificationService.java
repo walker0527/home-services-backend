@@ -9,8 +9,7 @@ import com.jzo2o.customer.model.dto.WorkerCertificationUpdateDTO;
  * 服务人员认证信息表 服务类
  * </p>
  *
- * @author itcast
- * @since 2023-09-06
+ * @author handuolong
  */
 public interface IWorkerCertificationService extends IService<WorkerCertification> {
 

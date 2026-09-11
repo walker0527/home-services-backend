@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 /**
  * 评分项
  *
- * @author itcast
+ * @author handuolong
  */
 @Data
 @NoArgsConstructor

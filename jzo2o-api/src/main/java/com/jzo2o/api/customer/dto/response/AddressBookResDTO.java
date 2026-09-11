@@ -11,8 +11,7 @@ import java.time.LocalDateTime;
  * 地址薄
  * </p>
  *
- * @author itcast
- * @since 2023-07-06
+ * @author handuolong
  */
 @Data
 @ApiModel("地址薄详情")

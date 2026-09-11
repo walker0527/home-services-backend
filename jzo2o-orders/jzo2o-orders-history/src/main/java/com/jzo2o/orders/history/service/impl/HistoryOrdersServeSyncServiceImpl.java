@@ -14,8 +14,7 @@ import java.time.LocalDateTime;
  * 服务单 服务实现类
  * </p>
  *
- * @author itcast
- * @since 2023-09-21
+ * @author handuolong
  */
 @Service
 public class HistoryOrdersServeSyncServiceImpl extends ServiceImpl<HistoryOrdersServeSyncMapper, HistoryOrdersServeSync> implements IHistoryOrdersServeSyncService {

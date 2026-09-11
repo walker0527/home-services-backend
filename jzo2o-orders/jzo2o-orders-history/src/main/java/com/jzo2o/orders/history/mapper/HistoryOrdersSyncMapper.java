@@ -13,8 +13,7 @@ import java.util.List;
  * 订单统计
  * </p>
  *
- * @author itcast
- * @since 2023-09-21
+ * @author handuolong
  */
 public interface HistoryOrdersSyncMapper extends BaseMapper<HistoryOrdersSync> {
 

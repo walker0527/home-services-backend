@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 /**
  * 机构下属服务人员简略响应数据
  *
- * @author itcast
+ * @author handuolong
  * @create 2023/7/18 20:45
  **/
 @Data

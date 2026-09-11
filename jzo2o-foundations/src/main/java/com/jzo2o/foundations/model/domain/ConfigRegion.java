@@ -13,8 +13,7 @@ import lombok.experimental.Accessors;
  * 区域业务配置
  * </p>
  *
- * @author itcast
- * @since 2023-08-21
+ * @author handuolong
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

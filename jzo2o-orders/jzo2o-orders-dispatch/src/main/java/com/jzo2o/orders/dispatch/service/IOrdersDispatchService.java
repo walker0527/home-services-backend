@@ -12,8 +12,7 @@ import java.util.List;
  * 派单池 服务类
  * </p>
  *
- * @author itcast
- * @since 2023-08-02
+ * @author handuolong
  */
 public interface IOrdersDispatchService extends IService<OrdersDispatch> {
 

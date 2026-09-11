@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 /**
- * @author itcast
+ * @author handuolong
  */
 @ApiModel("派单详情")
 @Data

@@ -10,8 +10,7 @@ import java.util.List;
  * 失败消息 Mapper 接口
  * </p>
  *
- * @author itcast
- * @since 2023-07-11
+ * @author handuolong
  */
 public interface FailMsgMapper {
     String BASE_COLUMNS = " id,exchange,routing_key as 'routingKey',msg,reason,delay_msg_execute_time as delayMsgExecuteTime,create_time as createTime, update_time as updateTime,next_fetch_time as nextFetchTime ";

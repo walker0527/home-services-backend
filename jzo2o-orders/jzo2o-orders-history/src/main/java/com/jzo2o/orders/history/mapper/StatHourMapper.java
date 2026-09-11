@@ -8,8 +8,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * 小时统计表 Mapper 接口
  * </p>
  *
- * @author itcast
- * @since 2023-09-21
+ * @author handuolong
  */
 public interface StatHourMapper extends BaseMapper<StatHour> {
 

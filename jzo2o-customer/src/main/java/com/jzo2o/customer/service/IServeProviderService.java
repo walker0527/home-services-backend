@@ -21,8 +21,7 @@ import java.util.List;
  * 服务人员/机构表 服务类
  * </p>
  *
- * @author itcast
- * @since 2023-07-17
+ * @author handuolong
  */
 public interface IServeProviderService extends IService<ServeProvider> {
 

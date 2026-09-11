@@ -19,7 +19,6 @@ import javax.annotation.Resource;
  * </p>
  *
  * @author author
- * @since 2023-06-29
  */
 @Service
 public class OperatorServiceImpl extends ServiceImpl<OperatorMapper, Operator> implements IOperatorService {

@@ -12,8 +12,7 @@ import java.util.List;
  * 服务人员/机构附属信息 Mapper 接口
  * </p>
  *
- * @author itcast
- * @since 2023-07-20
+ * @author handuolong
  */
 public interface ServeProviderSettingsMapper extends BaseMapper<ServeProviderSettings> {
 

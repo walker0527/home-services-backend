@@ -9,8 +9,7 @@ import java.time.LocalDateTime;
 /**
  * 用户信息响应
  *
- * @author itcast
- * @since 2023-07-04
+ * @author handuolong
  */
 @Data
 @ApiModel("用户信息响应")

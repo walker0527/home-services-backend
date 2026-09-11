@@ -13,8 +13,7 @@ import java.util.List;
  * 区域业务配置 服务类
  * </p>
  *
- * @author itcast
- * @since 2023-08-21
+ * @author handuolong
  */
 public interface IConfigRegionService extends IService<ConfigRegion> {
 

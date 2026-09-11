@@ -22,7 +22,7 @@ import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author itcast
+ * @author handuolong
  */
 @Slf4j
 @Service

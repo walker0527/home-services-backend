@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
- * @author itcast
+ * @author handuolong
  */
 @Configuration
 @ConditionalOnClass(RedissonClient.class)

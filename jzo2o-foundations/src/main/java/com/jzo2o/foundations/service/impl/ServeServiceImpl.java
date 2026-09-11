@@ -37,8 +37,7 @@ import java.util.stream.Collectors;
  * 服务实现类
  * </p>
  *
- * @author itcast
- * @since 2023-07-03
+ * @author handuolong
  */
 @Service
 public class ServeServiceImpl extends ServiceImpl<ServeMapper, Serve> implements IServeService {

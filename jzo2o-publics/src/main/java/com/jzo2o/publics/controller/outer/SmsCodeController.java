@@ -14,7 +14,7 @@ import javax.annotation.Resource;
 /**
  * 验证码
  *
- * @author itcast
+ * @author handuolong
  * @create 2023/9/24 09:48
  **/
 @RestController

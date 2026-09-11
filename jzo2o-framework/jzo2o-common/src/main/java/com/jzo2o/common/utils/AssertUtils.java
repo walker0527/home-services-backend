@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * 断言工具类，符合条件不会抛出异常，不符合条件则会抛出异常
  *
- * @author itheima
+ * @authorhanduolonng
  */
 public class AssertUtils {
     /**

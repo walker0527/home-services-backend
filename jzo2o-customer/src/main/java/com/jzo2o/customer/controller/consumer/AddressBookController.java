@@ -24,8 +24,7 @@ import java.util.List;
  * 地址薄 前端控制器
  * </p>
  *
- * @author itcast
- * @since 2023-07-06
+ * @author handuolong
  */
 @RestController("consumerAddressBookController")
 @RequestMapping("/consumer/address-book")

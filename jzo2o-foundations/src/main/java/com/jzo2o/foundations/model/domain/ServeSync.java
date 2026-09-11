@@ -15,8 +15,7 @@ import java.math.BigDecimal;
  * 服务同步表
  * </p>
  *
- * @author itcast
- * @since 2023-07-10
+ * @author handuolong
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

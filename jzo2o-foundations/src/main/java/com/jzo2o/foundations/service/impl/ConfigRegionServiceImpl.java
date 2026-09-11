@@ -17,8 +17,7 @@ import java.util.List;
  * 区域业务配置 服务实现类
  * </p>
  *
- * @author itcast
- * @since 2023-08-21
+ * @author handuolong
  */
 @Service
 public class ConfigRegionServiceImpl extends ServiceImpl<ConfigRegionMapper, ConfigRegion> implements IConfigRegionService {

@@ -20,8 +20,7 @@ import lombok.experimental.Accessors;
  * 服务任务
  * </p>
  *
- * @author itcast
- * @since 2023-09-11
+ * @author handuolong
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

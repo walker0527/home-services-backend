@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 /**
- * @author itcast
+ * @author handuolong
  */
 @RestController("operationAgencyCertificationController")
 @RequestMapping("/operation/agency-certification")

@@ -19,8 +19,7 @@ import org.springframework.stereotype.Service;
  * 服务人员认证信息表 服务实现类
  * </p>
  *
- * @author itcast
- * @since 2023-09-06
+ * @author handuolong
  */
 @Service
 public class WorkerCertificationServiceImpl extends ServiceImpl<WorkerCertificationMapper, WorkerCertification> implements IWorkerCertificationService {
